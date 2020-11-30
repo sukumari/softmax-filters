@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.softmax.filters</groupId>
-	<artifactId>Sepia</artifactId>
+	<artifactId>SepiaApplication</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Sepia</name>
+	<name>SepiaApplication</name>
 	<description>Sepia image filter created using Spring Boot</description>
 
 	<properties>
@@ -29,6 +29,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>

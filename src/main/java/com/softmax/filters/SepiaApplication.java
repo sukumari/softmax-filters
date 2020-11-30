@@ -1,4 +1,4 @@
-package com.softmax.filters.Sepia;
+package com.softmax.filters;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SepiaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SepiaApplication.class, args);
+		System.out.print(new SepiaApplication().applyFilter());
+	}
+
+	private final String filterMessage = "The Sepia filter has been applied.";
+
+	private String applyFilter() {
+		return filterMessage;
 	}
 
 }
