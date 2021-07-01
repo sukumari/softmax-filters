@@ -1,8 +1,8 @@
 pipeline {
   agent any
   tools {
-      // Install the Maven version configured as "M3" and add it to the path.
-      maven "M3"
+      // Install the Maven version configured as "my_mvn" and add it to the path.
+      maven "my_mvn"
   }
   stages {
     stage('Build and Test') {
@@ -11,18 +11,18 @@ pipeline {
         stage('Checkout On Slave 1') {
           agent {
             node {
-              label 'slave-1'
+              label 'slave1'
             }
           }
           steps {
-            git(url: 'https://github.com/siddudubey/softmax-filters.git', branch: 'master')
+            git(url: 'https://github.com/sukumari/softmax-filters.git', branch: 'master')
           }
         }
         
         stage('Compile and Package On Slave 1') {
           agent {
             node {
-              label 'slave-1'
+              label 'slave1'
             }
           }
           steps {
@@ -33,18 +33,18 @@ pipeline {
         stage('Checkout On Slave 2') {
           agent {
             node {
-              label 'slave-2'
+              label 'slave2'
             }
           }
           steps {
-            git(url: 'https://github.com/siddudubey/softmax-filters.git', branch: 'master')
+            git(url: 'https://github.com/sukumari/softmax-filters.git', branch: 'master')
           }
         }
         
         stage('Unit Test On Slave 2') {
           agent {
             node {
-              label 'slave-2'
+              label 'slave2'
             }
           }
           steps {
